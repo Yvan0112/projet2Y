@@ -57,6 +57,8 @@ Nez bouché: 5% ;
 Diarrhée: 4% ;
 Toux de sang: 1% ;
 Yeux gonflés: 1%.
+Par ailleurs, le directeur général de la Santé Jérôme Salomon a expliqué dans un point presse donné le 20 mars que le conseil professionnel des spécialistes d’oto-rhino-laryngologie (ORL) observait chez les personnes atteintes de CoVid-19 une "recrudescence des cas d’anosmie brutale, qui correspond à la disparition brutale de l’odorat, sans obstruction du nez, sans écoulement et qui peut donc survenir de façon isolée". Cette perte d'odorat peut en revanche s'accompagner d'une perte de goût (agueusie), "surtout chez les sujets les plus jeunes", souligne un tweet du ministère de la Santé. Bien qu'il s'agisse de symptômes rares, ce dernier invite les personnes e
+souffrant à demander un avis médical par téléphone "pour savoir si oui ou non un traitement spécifique est nécessaire".
 </p>
 </section>
 
