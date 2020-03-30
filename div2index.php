@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href= "assets/styles.css">
     <title>stopcovirus</title>
 </head>
 <body>
     <header>
     <h1> le cocoronavirus </h1>
 <section>  
-<h2> Qu’est-ce que le nouveau coronavirus ?</h2>
+ <h2> Qu’est-ce que le nouveau coronavirus ?</h2><nav class=slide>
 <p> Les coronavirus (surnommés CoV) sont une famille de virus plus ou moins sévères : selon le site 
 du gouvernement, ils peuvent provoquer de simples rhumes ou des pathologies plus lourdes telles que le syndrome respiratoire du Moyen-Orient (MERS) et le syndrome respiratoire aigu sévère (SRAS). Aujourd’hui, on en connaît six espèces. 
 Le nouveau coronavirus découvert en 2019 a été baptisé SARS-CoV-2 et la maladie qu’il entraîne, CoVid-19.</p>
-</secton>
+</secton> </nav>
 
 <section> 
 <h2>Quel est le mode de transmission ?</h2>
@@ -77,5 +78,6 @@ souffrant à demander un avis médical par téléphone "pour savoir si oui ou no
  
  
     </footer>
+    <script src="assets/app.js"></script>
 </body>
 </html>
