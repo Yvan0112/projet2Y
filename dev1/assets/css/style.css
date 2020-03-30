@@ -4,7 +4,7 @@ h1{
 
 }
 body{
-    background-color: rosybrown;
+    background-color: rgb(238, 228, 228);
 }
 nav {
     height: 100%;
@@ -34,4 +34,33 @@ nav {
   }
   .slide {
     transform: translateX(-100%);
+  }
+  img{
+    width: 100%;
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+  }
+  .c-titre{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+  }
+  #title-top{
+    text-align: center;
+    background: center;
+    border-bottom: royalblue;
+    box-sizing: border-box;
+    padding: 3.75em;
+    position: relative;
+    margin-left: 50%;
+    text-transform: uppercase;
+    transform: translateX(-50%);
+    width: 100vw;
+    color: royalblue;
+    
+  }
+  h2{ 
+    text-align: center;
   }
