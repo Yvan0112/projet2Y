@@ -21,7 +21,7 @@
         </nav>
         <div id="menu">Menu</div>
         </nav>
-        <section>
+        
             <h2>ATTESTATION DE DEPLACEMENT DEROGATOIRE</h2>
             <span>En application de l’article 3 du décret du    23 mars 2020    prescrivant les mesures générales nécessaires pour faire face à l’épidémie de Covid19 dans le cadre de l’état d’urgence sanitaire</span>
             <span> Je soussigné(e),</span>
@@ -72,7 +72,7 @@
 
                 </div>
             </form>
-        </section>
+        
 
       
         <script src="assets/js/app.js"></script>
