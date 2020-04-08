@@ -11,9 +11,11 @@
 <h1>"STOP COVIRUS"</h1>
     <nav class=slide>
             <ul>
+                <li><a href="index.php">Menu Pricipal</a></li>
                 <li><a href="accueil.php">Accueil</a></li>
-                <li><a href="symptomes.php">Symptômes</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="symptomes.php">Informations essentielles</a></li>
+                <li><a href="attestation.php">Attestation dérogatoire</a></li>
+                <li><a href="contact.php">Contact et N° utiles</a></li>
             </ul>
         </nav>
         <div id="menu">Menu</div>
@@ -32,6 +34,9 @@
 
 
         <script src="assets/js/app.js"></script>
+        
+        <p class="revenir"><a href="#haut" title="revenir en haut de la page">haut</a></p>
+    </footer>
     
 </body>
 </html>
