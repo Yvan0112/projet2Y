@@ -1,17 +1,50 @@
+
+h1 {
+
+    color: blue;
+    text-align: center ;
+}
+
+h3 {
+
+    text-align: justify;
+}
+
 h2{
-    color:blue;
-    text-align: center;
+    color:red;
+    text-align: justify;
 
 }
 body{
-    background-color: rgb(161, 108, 108);
+    background-color: rgb(241, 129, 129);
 }
 section {
 
 
-    background: rgba(194, 117, 117, 0.7);
+     text-align: right;
+    background: rgba(211, 170, 170, 0.7);
     
+}
+  img {
+	max-width: 100%;
+    height: auto;
+    list-style-image: -webkit-image-set(2);
+}
 
-    
-  }
- 
+form {
+    display: flex;
+    width:100%;
+    flex-direction: column;
+} 
+form > * {
+    margin:0.25rem;
+    padding:0.25rem;
+}
+p {
+    text-align: justify;
+}
+
+label {
+
+    text-align: justify;
+}

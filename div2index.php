@@ -10,7 +10,269 @@
 <body>
     <header>
     <h1> le cocoronavirus </h1>
-<section>  
+    
+
+
+<section>
+<h2> formulaire d'attestation de sortie </h2>
+    
+<form action="" method="POST">
+                <input type="text" name="nom" required placeholder="votre nom">
+                <input type="text" name="prenom" required placeholder="votre prenom">
+                <textarea name="adresse" cols="60" rows="6" required placeholder="votre adresse"></textarea>
+                <input type="text" name="date" value="<?php echo date("Y-m-d H:i:s") ?>">
+
+                <h3>cocher la raison de votre déplacement</h3>
+
+                <label>
+                    <input type="radio" name="raison" required value="courses alimentaires">
+                    <span>courses alimentaires</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="raison" required value="travail">
+                    <span>travail</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="raison" required value="aide aux proches">
+                    <span>aide aux proches</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="raison" required value="necessité médicale">
+                    <span>nécessité médicale</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="raison" required value="necessité familiale">
+                    <span>necessité familiale</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="raison" required value="sortie sport individuel">
+                    <span>sortie sport individuel</span>
+                </label>
+
+                <button type="submit">enregistrer mon attestation</button>
+
+
+                <input type="hidden" name="identifiantFormulaire" value="declaration">
+                
+                <div class="confirmation">  
+                
+                
+                <?php
+
+function filtrer ($name)
+{
+    
+    $info = $_REQUEST[$name] ?? "";
+
+
+    return $info;
+}
+
+
+function insererLigneSQL($nomTable, $tabAsso)
+{
+    
+    $requeteSQL =
+<<<CODESQL
+INSERT INTO $nomTable
+(nom, prenom, adresse, raison, numero, dateDeclaration) 
+VALUES 
+(:nom, :prenom, :adresse, :raison, :numero, :dateDeclaration) 
+CODESQL;
+    
+    $pdo = new PDO("mysql:host=localhost;dbname=attestation;charset=utf8;","root","");
+
+   
+    $pdoStatement = $pdo->prepare($requeteSQL);
+
+    $pdoStatement->execute($tabAsso);
+
+    
+
+}
+
+
+
+
+
+$identifiantFormulaire = filtrer("identifiantFormulaire");
+
+if ($identifiantFormulaire == "declaration")
+{
+
+    // ALORS JE VAIS RECUPERER LES INFOS
+    $tabAssoColonneValeur = [
+//        "nom"     => $_REQUEST["nom"] ?? "",
+        "nom"       => filtrer("nom"),
+        "prenom"    => filtrer("prenom"),
+        "adresse"   => filtrer("adresse"),
+        "raison"    => filtrer("raison"),
+    ];
+    
+    extract($tabAssoColonneValeur);
+    if ( $nom != ""
+         && $prenom != ""
+         && $adresse != ""
+         && $raison != "")
+         {
+            
+            $tabAssoColonneValeur["numero"] = uniqid();
+            // https://www.php.net/manual/fr/function.date.php
+            $tabAssoColonneValeur["dateDeclaration"] = date("Y-m-d H:i:s");
+
+    
+            insererLigneSQL("declaration", $tabAssoColonneValeur);
+            
+            echo "votre déclaration est bien enregistrée. NOTEZ BIEN VOTRE NUMERO D'ATTESTATION {$tabAssoColonneValeur["numero"]}";
+    }
+    else
+    {
+        echo "VEUILLEZ FOURNIR TOUTES LES INFORMATIONS SVP...";
+    }
+
+}
+
+?>
+           </div>
+            </form>
+              </section>
+
+
+
+
+
+
+
+
+        
+              <section>
+    <h2>OUTIL POUR VERIFIER LE NUMERO D'ATTESTATION</h2>
+    <p>pour que un policier/gendarme puisse vérifier le numéro fourni par une personne dans la rue</p>
+    <p>le citoyen doit fournir son numero d'attestation</p>
+    <p>et on va verifier si le numero existe et quelles sont les infos associées à ce numéro...</p>
+    <!-- SELON LE STANDARD, SI ON FAIT UNE LECTURE ALORS ON UTILISE UNE method="GET" -->
+    <form action="" method="GET">
+        <!-- PARTIE VISIBLE -->
+        <input type="text" required name="numero" placeholder="entre le numéro d'attestation">
+        <button type="submit">recherche</button>
+        <!-- INFOS TECHNIQUES POUR TRAITER LE FORMULAIRE -->
+        <input type="hidden" name="identifiantFormulaire" value="verifier">
+        <div class="confirmation">
+<?php
+
+
+
+$identifiantFormulaire = filtrer("identifiantFormulaire");
+if ($identifiantFormulaire == "verifier")
+{
+
+    
+    $tabAssoColonneValeur = [
+        "numero"       => filtrer("numero"),
+    ];
+        
+   
+    extract($tabAssoColonneValeur);
+    if ($numero != "")
+    {
+    
+        $requeteSQL =
+<<<CODESQL
+SELECT * 
+FROM declaration
+WHERE 
+numero = :numero
+CODESQL;
+
+$pdo = new PDO("mysql:host=localhost;dbname=attestation;charset=utf8;","root","");
+
+        
+         $pdoStatement = $pdo->prepare($requeteSQL);
+    
+
+       
+        $pdoStatement->execute($tabAssoColonneValeur);
+
+        
+        $pdoStatement->debugDumpParams();
+
+      
+        $tabLigneTrouvees = $pdoStatement->fetchAll(PDO::FETCH_ASSOC);
+
+        
+/*
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [nom] => emmanuel
+            [prenom] => macron
+            [adresse] => champs élysées
+            [raison] => sortie sport individuel
+            [numero] => 5e70d7d6af452
+            [dateDeclaration] => 0000-00-00 00:00:00
+        )
+)
+*/
+
+        
+        $nbLigneTrouvees = count($tabLigneTrouvees);
+        echo "<h2>IL Y A $nbLigneTrouvees RESULTAT SUR LE NUMERO $numero</h2>";
+
+        // ON FAIT UNE BOUCLE POUR PARCOURIR LE TABLEAU ORDONNE DES LIGNES SELECTIONNEES PAR NOTRE REQUETE SQL
+        foreach($tabLigneTrouvees as $tabLigne)
+        {
+            
+            extract($tabLigne);
+
+            echo 
+<<<CODEHTML
+            <article>
+                <h3>$nom</h3>
+                <h4>$prenom</h4>
+                <p>$adresse</p>
+                <p>$raison</p>
+                <h5>$dateDeclaration</h5>
+                <h5>$numero</h5>
+            </article>
+CODEHTML;
+        }
+       
+    }
+    else
+    {
+        
+        echo "IL FAUT FOURNIR UN NUMERO";
+    }
+  
+}
+
+?>
+        </div>
+
+    </form>
+</section>
+        
+        
+
+
+
+    
+    
+    
+    </heder>
+    <main>
+    
+
+    <section> 
+    <img src="assets/image/photocoronavirus.jpg" alt="photo coronavirus">
+ 
  <h2> Qu’est-ce que le nouveau coronavirus ?</h2><nav class=slide>
 <p> Les coronavirus (surnommés CoV) sont une famille de virus plus ou moins sévères : selon le site 
 du gouvernement, ils peuvent provoquer de simples rhumes ou des pathologies plus lourdes telles que le syndrome respiratoire du Moyen-Orient (MERS) et le syndrome respiratoire aigu sévère (SRAS). Aujourd’hui, on en connaît six espèces. 
@@ -62,13 +324,6 @@ Par ailleurs, le directeur général de la Santé Jérôme Salomon a expliqué d
 souffrant à demander un avis médical par téléphone "pour savoir si oui ou non un traitement spécifique est nécessaire".
 </p>
 </section>
-
-
-    
-    
-    
-    </heder>
-    <main>
 
 
     </main>
