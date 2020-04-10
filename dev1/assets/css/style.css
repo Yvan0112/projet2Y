@@ -37,6 +37,9 @@ nav {
   .slide {
     transform: translateX(-100%);
   }
+
+    
+    
   img{
     width: 100%;
     max-width: 100%;
@@ -80,3 +83,5 @@ label {
 
   text-align: justify;
 } 
+
+
