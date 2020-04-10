@@ -105,7 +105,7 @@ $identifiantFormulaire = filtrer("identifiantFormulaire");
 if ($identifiantFormulaire == "declaration")
 {
 
-    // ALORS JE VAIS RECUPERER LES INFOS
+
     $tabAssoColonneValeur = [
 //        "nom"     => $_REQUEST["nom"] ?? "",
         "nom"       => filtrer("nom"),
@@ -122,7 +122,7 @@ if ($identifiantFormulaire == "declaration")
          {
             
             $tabAssoColonneValeur["numero"] = uniqid();
-            // https://www.php.net/manual/fr/function.date.php
+            
             $tabAssoColonneValeur["dateDeclaration"] = date("Y-m-d H:i:s");
 
     
@@ -160,7 +160,7 @@ if ($identifiantFormulaire == "declaration")
         <!-- PARTIE VISIBLE -->
         <input type="text" required name="numero" placeholder="entre le numéro d'attestation">
         <button type="submit">recherche</button>
-        <!-- INFOS TECHNIQUES POUR TRAITER LE FORMULAIRE -->
+        
         <input type="hidden" name="identifiantFormulaire" value="verifier">
         <div class="confirmation">
 <?php
@@ -210,10 +210,10 @@ Array
 (
     [0] => Array
         (
-            [id] => 3
-            [nom] => emmanuel
-            [prenom] => macron
-            [adresse] => champs élysées
+            [id] => 2
+            [nom] => zindine
+            [prenom] => zidane
+            [adresse] => madride
             [raison] => sortie sport individuel
             [numero] => 5e70d7d6af452
             [dateDeclaration] => 0000-00-00 00:00:00
@@ -225,7 +225,7 @@ Array
         $nbLigneTrouvees = count($tabLigneTrouvees);
         echo "<h2>IL Y A $nbLigneTrouvees RESULTAT SUR LE NUMERO $numero</h2>";
 
-        // ON FAIT UNE BOUCLE POUR PARCOURIR LE TABLEAU ORDONNE DES LIGNES SELECTIONNEES PAR NOTRE REQUETE SQL
+    
         foreach($tabLigneTrouvees as $tabLigne)
         {
             
