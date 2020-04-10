@@ -88,12 +88,15 @@ label {
 h3{
   color: red;
 }
-img.gestes{
-  height: max-content;
+.gestes{
+  display: flex;
+  size: 100px;
 }
 .container{
   display: flex;
   justify-content: space-between;
+
+
 }
 .container div{
   padding: 10px;
