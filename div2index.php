@@ -10,12 +10,17 @@
 <body>
     <header>
     <h1> le cocoronavirus </h1>
-    
 
 
-<section>
-<h2> formulaire d'attestation de sortie </h2>
-    
+
+
+
+</heder>
+<main>
+
+<section id = "attestation de sorte">
+<h2>FORMULAIRE DE DECLARATION POUR ATTESTATION</h2>
+
 <form action="" method="POST">
                 <input type="text" name="nom" required placeholder="votre nom">
                 <input type="text" name="prenom" required placeholder="votre prenom">
@@ -266,8 +271,8 @@ CODEHTML;
     
     
     
-    </heder>
-    <main>
+
+    
     
 
     <section> 
