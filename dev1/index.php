@@ -9,7 +9,8 @@
 
 </head>
 <body>
-    <h1>"STOP COVIRUS"</h1>
+    <header>
+    
     <nav class=slide>
             <ul>
                 <li><a href="index.php">Menu Principal</a></li>
@@ -18,7 +19,11 @@
                 <li><a href="attestation.php">Attestation dérogatoire</a></li>
                 <li><a href="contact.php">Contact et N° utiles</a></li>
             </ul>
-        </nav>
+        
+</header>
+<main id = "haut">
+<h1>"STOP COVIRUS"</h1>
+</nav>
         <div id="menu">Menu</div>
         </nav>
         
@@ -39,11 +44,14 @@
             <p> Les coronavirus sont des virus connus depuis longtemps chez l’homme ainsi que chez les animaux. Ils provoquent la plupart du temps des maladies bénignes comme le rhume. Cependant, certains coronavirus entrainent des maladies plus graves telles que le syndrome respiratoire aigu sévère (SRAS) ou bien le syndrome respiratoire du Moyen-Orient (MERS) apparu en 2012 en Arabie Saoudite.
 
 Le virus qui sévit actuellement est dénommé Covid-19. Il s’agit d'un nouveau coronavirus qui a été découvert le 7 janvier, après que plusieurs cas de pneumonies virales soient apparus en Chine dans la ville de Wuhan. Les premières personnes touchées par le Covid-19 s'étaient rendues au marché de Wuhan, où des animaux vivants étaient vendus. La piste de la zoonose (maladie qui se transmet de l'animal à l'homme) est donc privilégiée pour définir l'origine du virus, bien qu'elle ne soit pas encore confirmée.</p>
+</main>
+<footer>
 
 
-        
-    <script src="assets/js/app.js"></script>
-    <p class="revenir"><a href="#haut" title="revenir en haut de la page">haut</a></p>
+    <p class="revenir"><a href="#haut" title="revenir en haut de la page">haut</a></p>     
+</footer>
+     <script src="assets/js/app.js"></script>
+
     
 </body>
 </html>

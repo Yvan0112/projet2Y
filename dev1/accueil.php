@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="assets/css/style.css">
     
 </head>
-<body> <h1>"STOP COVIRUS"</h1>
+<body>
+    <header>
+    
+
     <nav class=slide>
             <ul>
                 <li><a href="index.php">Menu Principal</a></li> 
@@ -17,7 +20,11 @@
                 <li><a href="attestation.php">Attestation dérogatoire</a></li>
                 <li><a href="contact.php">Contact et N° utiles</a></li>
             </ul>
-        </nav>
+       
+</header>
+<main id = "haut">
+<h1>"STOP COVIRUS"</h1>
+</nav>
         <div id="menu">Menu</div>
         </nav>
         <img src="assets/img/covid.jpg" alt="covid">
@@ -27,7 +34,11 @@
             <br>
             <br>En application de l’état d’urgence sanitaire, les déplacements sont interdits sauf dans les cas suivants et uniquement à condition d'être munis d'une attestation pour :</p>
 
-    <script src="assets/js/app.js"></script>
+</main>
+<footer>
     <p class="revenir"><a href="#haut" title="revenir en haut de la page">haut</a></p>
+</footer>
+    <script src="assets/js/app.js"></script>
+    
 </body>
 </html>
