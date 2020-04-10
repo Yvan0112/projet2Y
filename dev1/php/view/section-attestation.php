@@ -10,7 +10,7 @@
                 <span>Demeurant : </span>
                 <textarea name="adresse" cols="60" rows="6" required placeholder="votre adresse"></textarea>
                 <p>certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé par l’article 3 du décret du 23 mars 2020 prescrivant les mesures générales nécessaires pour faire face à l’épidémie de Covid19 dans le cadre de l’état d’urgence sanitaire.</p>
-                <h3>cocher la raison de votre déplacement</h3>
+                <p><strong>cocher la raison de votre déplacement</strong></p>
 
                 <label>
                     <input type="radio" name="raison" required value="travail">

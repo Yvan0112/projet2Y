@@ -1,7 +1,8 @@
 <section id = "contact">
-<img src="assets/img/covid.jpg" alt="covid">
+<h3><strong>Numéros utiles</strong></h3>
+<img src="assets/img/numutiles.png" alt="numutiles">
         <div class="item-file">
-            <h3><strong>Numéros utiles</strong></h3>
+            
             <p>Un numéro vert répond à vos questions sur le Coronavirus COVID-19 en permanence, 24h/24 et 7j/7 : 0 800 130 000.</p>
 
             <p>Si vous avez des difficultés pour entendre ou parler par téléphone en raison d’un handicap, vous pouvez vous rendre sur l'espace de contact ouvert dédié aux personnes sourdes, malentendantes ou aveugles.</p>

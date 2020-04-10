@@ -68,6 +68,7 @@ nav {
     
   }
   h2{ 
+    color: royalblue;
     text-align: center;
   }
   form {
@@ -84,4 +85,17 @@ label {
   text-align: justify;
 } 
 
+h3{
+  color: red;
+}
+img.gestes{
+  height: max-content;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+}
+.container div{
+  padding: 10px;
 
+}
