@@ -90,7 +90,7 @@ h3{
 }
 .gestes{
   display: flex;
-  size: 100px;
+  background-size: 21px 21px;
 }
 .container{
   display: flex;

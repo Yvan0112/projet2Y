@@ -11,6 +11,9 @@
 <body id = "haut">
     <header>
     <h1>"STOP COVIRUS"</h1>
+    </nav>
+        <div id="menu">Menu</div>
+           </nav>
     <nav class=slide>
             <ul>
                 
@@ -19,9 +22,7 @@
                 <li><a href="#attestation">Attestation dérogatoire</a></li>
                 <li><a href="#contact">Contact et N° utiles</a></li>
             </ul>
-            </nav>
-        <div id="menu">Menu</div>
-           </nav>
+           
         
 </header>
 <main>
